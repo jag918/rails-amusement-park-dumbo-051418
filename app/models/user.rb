@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # User
   #   is valid with a name, password, happiness, nausea, height, and tickets (FAILED - 55)
   #   is not valid without a password (FAILED - 56)
@@ -11,5 +11,13 @@ class User < ActiveRecord::Base
   has_many :rides
   has_many :attractions, through: :rides
 
-  validates :name, :password, :happiness, :nausea, :height, :tickets, presence: true
+  #validates :name, :password, :happiness, :nausea, :height, :tickets, presence: true
+  validates :password, presence: true
+  def mood
+    if self.nausea >= self.happiness
+      'sad'
+    else
+      'happy'
+    end
+  end
 end

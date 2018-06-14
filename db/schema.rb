@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_14_202615) do
+ActiveRecord::Schema.define(version: 2018_06_14_203209) do
 
-# Could not dump table "attractions" because of following StandardError
-#   Unknown type 'tickets' for column 'ticket_number'
+  create_table "attractions", force: :cascade do |t|
+    t.string "name"
+    t.integer "min_height"
+    t.integer "nausea_rating"
+    t.integer "happiness_rating"
+    t.integer "tickets"
+  end
 
   create_table "rides", force: :cascade do |t|
     t.integer "attraction_id"

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%=  @user.name%></h1>
+    Mood
+    <% if @user.happiness < 2 %>
+    sad
+    <% else %>
+    happy
+    <% end %>
+  </body>
+</html>
